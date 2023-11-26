@@ -8,7 +8,7 @@ export default function App() {
         setTheme((prevTheme) => (prevTheme ==="light" ? "dark" : "light"));
     };
     return (
-        <div className={`App ${theme === 'light' ? 'light' : 'dark'}`}>
+        <div className="App" id={theme}>
             <h1>Newton School</h1>
             <div>
                 <form>
