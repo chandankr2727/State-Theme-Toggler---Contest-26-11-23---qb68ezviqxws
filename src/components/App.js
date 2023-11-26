@@ -2,8 +2,13 @@ import React, { useState } from "react";
 import "../styles/App.css";
 
 export default function App() {
+    const [theme, setTheme] = useState("light");
+    
+    const toggleTheme = () => {
+        setTheme((prevTheme) => (prevTheme ==="light" ? "dark" : "light"));
+    };
     return (
-        <div className="App">
+        <div className={`App ${theme === 'light' ? 'light' : 'dark'}`}>
             <h1>Newton School</h1>
             <div>
                 <form>
@@ -15,7 +20,7 @@ export default function App() {
                 </form>
             </div>
             <label> {theme === "light" ? "Light Mode" : "Dark Mode"}</label>
-            <input type="checkbox" id="switch" />
+            <input type="checkbox" id="switch" onChange={toggleTheme} />
             <label for="switch" className="label">
                 Toggle
             </label>
